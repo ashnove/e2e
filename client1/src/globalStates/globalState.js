@@ -1,5 +1,3 @@
-import { atom } from "recoil";
-
 export const loggedInUser = {
     id: "3",
     username: "aashish",
@@ -11,11 +9,3 @@ export const recievingUser  = {
     username: "ashutosh",
     name: "Ashutosh",
   };
-
-export const chatMessages = atom({
-  key: "chatMessages",
-  default: [],
-  persistence_UNSTABLE: {
-    type: "chatMessages",
-  },
-});

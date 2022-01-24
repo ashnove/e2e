@@ -33,16 +33,16 @@ const Chat = (props) => {
   };
 
   const onMessageReceived = (msg) => {
-    const notification = JSON.parse(msg.body);
+    const content = JSON.parse(msg.body);
   };
 
   const sendMessage = (msg) => {
     if (msg.trim() !== "") {
       const message = {
         senderId: currentUser.id,
-        recipientId: activeContact.id,
+        recipientId: recievingUser.id,
         senderName: currentUser.name,
-        recipientName: activeContact.name,
+        recipientName: recievingUser.name,
         content: msg,
         timestamp: new Date(),
       };
@@ -63,11 +63,11 @@ const Chat = (props) => {
   return (
     <RecoilRoot>
       <div style={style}>
-      <h3> Client2 [Student] is Up!  </h3>    
+      <h3> Client-2 is Up!  </h3>    
       <Button
           appearance="primary"
           style={{ width: "6rem", margin: "0.5rem", backgroundColor: "#c0392b" }}
-          onClick={() => sendMessage('Hi Client-1!')}            
+          onClick={() => sendMessage('Hi Client-2!')}            
         >
           Send Stuf..
       </Button>
